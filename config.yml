@@ -1,0 +1,7 @@
+world-name: world
+x: 0
+y: 65
+z: 0
+pitch: 0
+yaw: 0
+teleport-on-join: true
