@@ -40,23 +40,28 @@ public class Main extends JavaPlugin implements Listener {
 				if (player.hasPermission("jointp.setspawn")){
 					setSpawnLocation(player.getLocation());
 					player.sendMessage(ChatColor.DARK_AQUA + "The spawn location has been set!");
+					return true;
 				} else {
 					player.sendMessage(ChatColor.RED + "You do not have permission to execute this command.");
+					return true;
 				}
 			} else {
 				sender.sendMessage("You have to be a player in order to execute this command.");
+				return true;
 			}
-			return true;
 		} else if (command.getName().equalsIgnoreCase("spawn")){
 			if (sender instanceof Player){
 				Player player = (Player) sender;
 				if (player.hasPermission("jointp.spawn")){
 					player.teleport(getSpawnLocation());
+					return true;
 				} else {
 					player.sendMessage(ChatColor.RED + "You do not have permission to execute this command.");
+					return true;
 				}
 			} else {
 				sender.sendMessage("You have to be a player in order to execute this command.");
+				return true;
 			}
 		}
 		return false;
