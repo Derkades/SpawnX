@@ -2,7 +2,7 @@ name: SpawnX
 main: com.robinmc.spawnx.Main
 version: 1.0.0
 author: RobinMC
-description: 'Teleports players to a location when they join. Also adds /spawn'
+description: 'Adds /spawn and teleports players to spawn on join.'
 
 commands:
   setspawn:
