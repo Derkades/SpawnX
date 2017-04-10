@@ -37,7 +37,7 @@ public class Main extends JavaPlugin implements Listener {
 		if (command.getName().equalsIgnoreCase("setspawn")){
 			if (sender instanceof Player){
 				Player player = (Player) sender;
-				if (player.hasPermission("jointp.setspawn")){
+				if (player.hasPermission("spawnx.setspawn")){
 					setSpawnLocation(player.getLocation());
 					player.sendMessage(ChatColor.DARK_AQUA + "The spawn location has been set!");
 					return true;
@@ -52,7 +52,7 @@ public class Main extends JavaPlugin implements Listener {
 		} else if (command.getName().equalsIgnoreCase("spawn")){
 			if (sender instanceof Player){
 				Player player = (Player) sender;
-				if (player.hasPermission("jointp.spawn")){
+				if (player.hasPermission("spawnx.spawn")){
 					player.teleport(getSpawnLocation());
 					return true;
 				} else {
