@@ -9,3 +9,5 @@ commands:
     aliases: setjoinspawn
     description: Sets the spawnpoint at the current location.
     usage: </command>
+  spawn:
+    description: Teleport to spawn
