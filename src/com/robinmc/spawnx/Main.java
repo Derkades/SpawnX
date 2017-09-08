@@ -28,11 +28,6 @@ public class Main extends JavaPlugin implements Listener {
 	}
 	
 	@Override
-	public void onDisable(){
-		plugin = null;
-	}
-	
-	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
 		if (command.getName().equalsIgnoreCase("setspawn")){
 			if (sender instanceof Player){
@@ -69,29 +64,29 @@ public class Main extends JavaPlugin implements Listener {
 	
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event){
-		if (Config.getConfig().getBoolean("teleport-on-join")){
+		if (getConfig().getBoolean("teleport-on-join")){
 			Player player = event.getPlayer();
 			player.teleport(getSpawnLocation());
 		}
 	}
 	
 	private Location getSpawnLocation(){
-		String worldName = Config.getConfig().getString("world-name");
-		double x = Config.getConfig().getDouble("x");
-		double y = Config.getConfig().getDouble("y");
-		double z = Config.getConfig().getDouble("z");
-		float pitch = (float) Config.getConfig().getDouble("pitch");
-		float yaw = (float) Config.getConfig().getDouble("yaw");
+		String worldName = getConfig().getString("world-name");
+		double x = getConfig().getDouble("x");
+		double y = getConfig().getDouble("y");
+		double z = getConfig().getDouble("z");
+		float pitch = (float) getConfig().getDouble("pitch");
+		float yaw = (float) getConfig().getDouble("yaw");
 		return new Location(Bukkit.getWorld(worldName), x, y, z, yaw, pitch);
 	}
 	
 	private void setSpawnLocation(Location loc){
-		Config.getConfig().set("world-name", loc.getWorld().getName());
-		Config.getConfig().set("x", loc.getX());
-		Config.getConfig().set("y", loc.getY());
-		Config.getConfig().set("z", loc.getZ());
-		Config.getConfig().set("pitch", loc.getPitch());
-		Config.getConfig().set("yaw", loc.getYaw());
+		getConfig().set("world-name", loc.getWorld().getName());
+		getConfig().set("x", loc.getX());
+		getConfig().set("y", loc.getY());
+		getConfig().set("z", loc.getZ());
+		getConfig().set("pitch", loc.getPitch());
+		getConfig().set("yaw", loc.getYaw());
 		super.saveConfig();
 	}
 
