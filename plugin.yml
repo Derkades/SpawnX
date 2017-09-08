@@ -1,7 +1,7 @@
 name: SpawnX
-main: com.robinmc.spawnx.Main
+main: xyz.derkades.spawnx.Main
 version: 1.0.0
-author: RobinMC
+author: Derkades
 description: 'Adds /spawn and teleports players to spawn on join.'
 
 commands:

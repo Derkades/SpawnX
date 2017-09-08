@@ -1,4 +1,4 @@
-package com.robinmc.spawnx;
+package xyz.derkades.spawnx;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
