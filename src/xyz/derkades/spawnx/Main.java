@@ -9,22 +9,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
-	
-	private static Plugin plugin;
-	
-	static Plugin getPlugin(){
-		return plugin;
-	}
 	
 	@Override
 	public void onEnable(){
 		super.getServer().getPluginManager().registerEvents(this, this);
 		super.saveDefaultConfig();
-		plugin = this;
 	}
 	
 	@Override
